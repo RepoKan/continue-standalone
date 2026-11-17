@@ -4,5 +4,9 @@ updates:
     directory: "/"
     schedule:
       interval: daily
+    # Stop scheduled version-update pull requests: this repository is used to run
+    # the required merge gate, not to track dependency upgrades. Security updates
+    # are unaffected by this limit and stay enabled in repository settings.
+    open-pull-requests-limit: 0
     ignore:
       - dependency-name: dtolnay/rust-toolchain
